@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 
 
@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route("/")
 def index():
-    return jsonify({"message": "Hello World!"})
+    return render_template("index.html")
 
 @app.route("/users")
 def users():
